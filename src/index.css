@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-soft: #f5f7fb;
+    --bg-main: #eef2ff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --line: #dbe3ef;
+    --brand: #0f172a;
+    --accent: #0f766e;
+    --danger: #dc2626;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background:
+      radial-gradient(circle at 8% 12%, rgba(15, 118, 110, 0.15), transparent 34%),
+      radial-gradient(circle at 92% 20%, rgba(249, 115, 22, 0.12), transparent 28%),
+      linear-gradient(180deg, var(--bg-main), var(--bg-soft));
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen px-4 pb-10 sm:px-6;
+  }
+
+  .panel {
+    @apply rounded-2xl border bg-white/90 shadow-lg;
+    border-color: var(--line);
+  }
+
+  .btn-primary {
+    @apply rounded-xl px-4 py-2 font-medium text-white transition;
+    background: var(--brand);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-lg;
+    background: #1f2937;
+  }
+
+  .btn-secondary {
+    @apply rounded-xl border bg-white px-4 py-2 font-medium text-slate-700 transition;
+    border-color: var(--line);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-slate-50;
+  }
+
+  .field {
+    @apply w-full rounded-xl border bg-white px-3 py-2.5 text-sm text-slate-800 outline-none transition;
+    border-color: var(--line);
+  }
+
+  .field:focus {
+    @apply ring-2;
+    border-color: #14b8a6;
+    ring-color: rgba(20, 184, 166, 0.22);
+  }
+}

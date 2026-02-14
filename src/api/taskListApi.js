@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080";
+const API_BASE = "https://task-app-1-lel9.onrender.com";
 
 export const getTaskLists = async () => {
   const res = await fetch(`${API_BASE}/task-lists`);
